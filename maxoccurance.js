@@ -48,3 +48,42 @@ function readLine() {
     idx++;
     return data[idx - 1].trim();
 }
+function maxOccurence(arr){
+    let n = arr.length;
+    if(n==0)
+    {
+        return [-1];
+    }
+    let result = [];
+    let maxcount = 0;
+    let curmax=1;
+    for(let i = 1;i<n;i++){
+        if(arr[i]==arr[i-1])
+        {
+            curmax +=1;
+        }else{
+            if(curmax==maxcount)
+            {
+                result.push(arr[i-1])
+            }
+            else if(curmax > maxcount){
+                result = [arr[i-1]];
+                maxcount = curmax;
+            }
+            curmax = 1;
+        }
+    }
+    if(curmax==maxcount)
+            {
+                result.push(arr[n-1])
+            }
+            else if(curmax > maxcount){
+                result = [arr[n-1]];
+            }
+            return result;
+}
+let arr1 =maxOccurence(arr);
+for(let i = 0;i<arr1.length;i++)
+{
+    console.log(arr1[i]);
+}
