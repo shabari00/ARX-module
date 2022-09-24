@@ -43,7 +43,7 @@ Since we have to print the leaders in the reverse order, the output will be
 17
 */
 let fs = require("fs");
-let data = fs.readFileSync(0, 'utf-8');
+let data = fs.readFileSync("input.txt", 'utf-8');
 let idx = 0;
 data = data.split('\n');
 
